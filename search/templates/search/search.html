@@ -1,0 +1,14 @@
+{% extends 'search/base.html' %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    <input class="search" name="search" value="" placeholder="search..." />
+    <button>search</button>
+</form>
+    <div>
+        <ol>
+        {% for result in results %}
+            <li>{{ result.kind }}, {{ result.artistName }}</li>
+        {% endfor %}
+        </ol>
+    </div>
+{% endblock %}
